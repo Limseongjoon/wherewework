@@ -2,9 +2,19 @@
 const { withSentryConfig } = require('@sentry/nextjs');
 
 const moduleExports = {
-  // Your existing module.exports
-  reactStrictMode: true,
+  // reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: [
+      'mysite.com', // 배포 주소
+      'localhost', // for local development
+      '10.0.2.2', // Android emulator
+      // 's3.us-west-2.amazonaws.com', // S3 bucket (notion)
+      // 'storage.googleapis.com', // GCP bucket
+      // 'k.kakaocdn.net', // Kakao CDN
+    ],
+    // minimumCacheTTL: 60 * 60 * 24 * 60, // 60 days, 노션 이미지 expire 방지
+  },
 
   sentry: {
     // Use `hidden-source-map` rather than `source-map` as the Webpack `devtool`
