@@ -13,6 +13,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@next/font": "^13.0.5",
+    "@sanity/client": "^3.4.1",
     "@sentry/nextjs": "^7.21.1",
     "daisyui": "^2.42.1",
     "framer-motion": "^7.6.12",
@@ -23,7 +24,7 @@
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
-    "@types/node": "18.11.9",
+    "@types/node": "^18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "autoprefixer": "^10.4.13",
