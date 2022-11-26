@@ -6,6 +6,48 @@ import { useEffect } from 'react';
 import * as gtag from '../lib/gtag';
 import ChannelService from '../lib/ChannelService';
 import Script from 'next/script';
+import localFont from '@next/font/local';
+
+const pretendard = localFont({
+  src: [
+    {
+      path: '../public/fonts/Pretendard-Thin.otf',
+      weight: '100',
+    },
+    {
+      path: '../public/fonts/Pretendard-ExtraLight.otf',
+      weight: '200',
+    },
+    {
+      path: '../public/fonts/Pretendard-Light.otf',
+      weight: '300',
+    },
+    {
+      path: '../public/fonts/Pretendard-Regular.otf',
+      weight: '400',
+    },
+    {
+      path: '../public/fonts/Pretendard-Medium.otf',
+      weight: '500',
+    },
+    {
+      path: '../public/fonts/Pretendard-Semibold.otf',
+      weight: '600',
+    },
+    {
+      path: '../public/fonts/Pretendard-Bold.otf',
+      weight: '700',
+    },
+    {
+      path: '../public/fonts/Pretendard-ExtraBold.otf',
+      weight: '800',
+    },
+    {
+      path: '../public/fonts/Pretendard-Black.otf',
+      weight: '900',
+    },
+  ],
+});
 
 function App({ Component, pageProps }: AppProps) {
   // GA
@@ -56,7 +98,9 @@ function App({ Component, pageProps }: AppProps) {
         }}
       /> */}
       <RecoilRoot>
-        <Component {...pageProps} />
+        <main className={pretendard.className}>
+          <Component {...pageProps} />
+        </main>
       </RecoilRoot>
     </>
   );

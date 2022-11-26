@@ -34,3 +34,5 @@ npx @sentry/wizard -i nextjs
 Favicon 만들어서 public/favicon 폴더에 넣기
 
 headless UI / NextUI 등 적용 / Chakra 는 빼기 (폰트 문제)
+
+Pretendard 폰트 적용
