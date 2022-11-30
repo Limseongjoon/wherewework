@@ -3,9 +3,15 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './public/**/*.html',
+    './node_modules/flowbite-react/**/*.js',
   ],
   theme: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/line-clamp'), require('daisyui')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    require('daisyui'),
+    require('flowbite/plugin'),
+  ],
 };
