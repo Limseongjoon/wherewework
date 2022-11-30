@@ -99,7 +99,11 @@ function App({ Component, pageProps }: AppProps) {
       /> */}
       <RecoilRoot>
         <main className={pretendard.className}>
-          <Component {...pageProps} />
+          <div className="bg-gray-200">
+            <div className="max-w-md mx-auto bg-white min-h-screen">
+              <Component {...pageProps} />
+            </div>
+          </div>
         </main>
       </RecoilRoot>
     </>
