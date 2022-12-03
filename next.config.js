@@ -6,8 +6,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      process.env.VERCEL_URL,
-      'mysite.com', // 배포 주소
+      process.env.VERCEL_URL ?? 'mysite.com', // 배포 주소
       'localhost', // for local development
       '10.0.2.2', // Android emulator
       // 's3.us-west-2.amazonaws.com', // S3 bucket (notion)

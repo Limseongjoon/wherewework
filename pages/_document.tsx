@@ -5,6 +5,61 @@ export default function Document() {
     <Html>
       <Head>
         <link
+          rel="preload"
+          href="/fonts/Pretendard-Thin.otf"
+          as="font"
+          type="font/opentype"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-ExtraLight.otf"
+          as="font"
+          type="font/opentype"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Light.otf"
+          as="font"
+          type="font/opentype"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Regular.otf"
+          as="font"
+          type="font/opentype"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Medium.otf"
+          as="font"
+          type="font/opentype"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-SemiBold.otf"
+          as="font"
+          type="font/opentype"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Bold.otf"
+          as="font"
+          type="font/opentype"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-ExtraBold.otf"
+          as="font"
+          type="font/opentype"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Pretendard-Black.otf"
+          as="font"
+          type="font/opentype"
+        />
+
+        <link
           rel="apple-touch-icon"
           sizes="57x57"
           href="/favicon/apple-icon-57x57.png"

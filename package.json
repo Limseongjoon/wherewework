@@ -10,6 +10,7 @@
     "migrate": "dotenv -e .env.local -- npx prisma migrate dev"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.4.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@next/font": "^13.0.5",
@@ -19,7 +20,7 @@
     "daisyui": "^2.42.1",
     "flowbite": "^1.5.4",
     "flowbite-react": "^0.3.5",
-    "framer-motion": "^7.6.12",
+    "framer-motion": "^7.6.18",
     "next": "13.0.5",
     "next-auth": "^4.17.0",
     "next-auth-sanity": "^1.4.4",

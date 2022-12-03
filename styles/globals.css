@@ -6,13 +6,14 @@ html,
 body {
   padding: 0;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-  /* font-family: 'Pretendard';
-  --notion-font: 'Pretendard'; */
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --notion-font: 'Pretendard', -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
 }
 
-/* @font-face {
+@font-face {
   font-family: 'Pretendard';
   src: url('/fonts/Pretendard-Thin.otf') format('opentype');
   font-weight: 100;
@@ -56,7 +57,7 @@ body {
   font-family: 'Pretendard';
   src: url('/fonts/Pretendard-Black.otf') format('opentype');
   font-weight: 900;
-} */
+}
 
 a {
   color: inherit;
