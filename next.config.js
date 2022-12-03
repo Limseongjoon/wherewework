@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const { withSentryConfig } = require('@sentry/nextjs');
 
-const moduleExports = {
+const nextConfig = {
   // reactStrictMode: true,
   swcMinify: true,
   images: {
     domains: [
+      process.env.VERCEL_URL,
       'mysite.com', // 배포 주소
       'localhost', // for local development
       '10.0.2.2', // Android emulator
@@ -16,15 +17,15 @@ const moduleExports = {
     // minimumCacheTTL: 60 * 60 * 24 * 60, // 60 days, 노션 이미지 expire 방지
   },
 
-  sentry: {
-    // Use `hidden-source-map` rather than `source-map` as the Webpack `devtool`
-    // for client-side builds. (This will be the default starting in
-    // `@sentry/nextjs` version 8.0.0.) See
-    // https://webpack.js.org/configuration/devtool/ and
-    // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/#use-hidden-source-map
-    // for more information.
-    hideSourceMaps: true,
-  },
+  // sentry: {
+  //   // Use `hidden-source-map` rather than `source-map` as the Webpack `devtool`
+  //   // for client-side builds. (This will be the default starting in
+  //   // `@sentry/nextjs` version 8.0.0.) See
+  //   // https://webpack.js.org/configuration/devtool/ and
+  //   // https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/#use-hidden-source-map
+  //   // for more information.
+  //   hideSourceMaps: true,
+  // },
 };
 
 const sentryWebpackPluginOptions = {
@@ -41,4 +42,5 @@ const sentryWebpackPluginOptions = {
 
 // Make sure adding Sentry options is the last code to run before exporting, to
 // ensure that your source maps include changes from all other Webpack plugins
-module.exports = withSentryConfig(moduleExports, sentryWebpackPluginOptions);
+// module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+module.export = nextConfig;
