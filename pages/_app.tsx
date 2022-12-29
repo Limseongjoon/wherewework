@@ -58,11 +58,11 @@ function App({ Component, pageProps }: AppProps) {
       /> */}
       <RecoilRoot>
         <ChakraProvider theme={{}}>
-          <div className="bg-gray-200">
-            <div className="max-w-md mx-auto bg-white min-h-screen">
-              <Component {...pageProps} />
-            </div>
-          </div>
+          {/* <div className="bg-gray-200">
+            <div className="max-w-md mx-auto bg-white min-h-screen"> */}
+          <Component {...pageProps} />
+          {/* </div>
+          </div> */}
         </ChakraProvider>
       </RecoilRoot>
     </>

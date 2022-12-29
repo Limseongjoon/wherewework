@@ -36,3 +36,5 @@ Favicon 만들어서 public/favicon 폴더에 넣기
 headless UI / NextUI 등 적용 / Chakra 는 빼기 (폰트 문제)
 
 Pretendard 폰트 적용
+
+https://fe-developers.kakaoent.com/2022/220714-next-image/
