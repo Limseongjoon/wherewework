@@ -3,8 +3,6 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './public/**/*.html',
-    './node_modules/flowbite-react/**/*.js',
   ],
   theme: {
     extend: {
@@ -31,7 +29,6 @@ module.exports = {
         'noto-sans-kr': "'Noto Sans KR'",
       },
       borderRadius: {
-        '6xxs': '3.72px',
         '5xxs': '5.47px',
         '4xxs': '6.96px',
         '3xxs': '9.74px',
@@ -48,15 +45,8 @@ module.exports = {
       },
     },
     fontSize: {
-      '14xs': '8.55px',
-      '13xs': '8.39px',
-      '12xs': '9.33px',
-      '11xs': '10.85px',
-      '10xs': '11.17px',
-      '9xs': '11.43px',
-      '8xs': '12.58px',
-      '7xs': '12.34px',
-      '6xs': '12.81px',
+      '7xs': '12.58px',
+      '6xs': '12.34px',
       '5xs': '13.72px',
       '4xs': '15.7px',
       '3xs': '15.94px',
@@ -94,16 +84,8 @@ module.exports = {
       '27xl': '54.18px',
       '28xl': '59.17px',
       '29xl': '60px',
-      '30xl': '81.13px',
-      '31xl': '103.97px',
-      '32xl': '188.57px',
-      '33xl': '319.61px',
+      '30xl': '103.97px',
     },
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-    require('daisyui'),
-    require('flowbite/plugin'),
-  ],
   corePlugins: { preflight: false },
 };

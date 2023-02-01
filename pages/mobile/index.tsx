@@ -40,7 +40,10 @@ const FrameComponent2: NextPage = () => {
         </p>
         <p className="m-0">해당 이메일 주소로 런칭 알림을 보내드립니다.)</p>
       </div>
-      <div className="absolute top-[1510.92px] left-[59.15px] rounded-4xxl box-border w-[706.17px] h-[96.25px] border-[1.9px] border-solid border-black" />
+      <input
+        className="bg-[transparent] absolute top-[1510.92px] left-[59.15px] rounded-4xxl box-border w-[706.17px] h-[96.25px] border-[1.9px] border-solid border-black"
+        type="text"
+      />
       <div className="absolute top-[1632.02px] left-[59.15px] rounded-4xxl bg-mediumslateblue box-border w-[706.17px] h-[96.25px] border-[1.9px] border-solid border-black" />
       <b className="absolute top-[1663.67px] left-[106.55px] text-[28.67px] tracking-[0.06em] text-white">
         런칭알림 신청하기 (런칭 후 1달간 무료)
@@ -180,7 +183,7 @@ const FrameComponent2: NextPage = () => {
             <b className="absolute top-[0px] left-[0px] leading-[140%]">
               월간검색량(PC)
             </b>
-            <div className="absolute top-[3.61px] left-[117.97px] w-[16.45px] h-[17.51px] text-left text-7xs text-gray-200">
+            <div className="absolute top-[3.61px] left-[117.97px] w-[16.45px] h-[17.51px] text-left text-6xs text-gray-200">
               <img
                 className="absolute top-[1.06px] left-[0px] w-[16.45px] h-[16.45px]"
                 alt=""
@@ -193,7 +196,7 @@ const FrameComponent2: NextPage = () => {
           </div>
           <div className="absolute top-[67.63px] left-[646.85px] w-[175.71px] h-[23px] text-right text-xs">
             <b className="absolute top-[0px] left-[0px] leading-[140%]">{`검색순위   (자사 URL) `}</b>
-            <div className="absolute top-[3.61px] left-[159.26px] w-[16.45px] h-[17.51px] text-left text-7xs text-gray-200">
+            <div className="absolute top-[3.61px] left-[159.26px] w-[16.45px] h-[17.51px] text-left text-6xs text-gray-200">
               <img
                 className="absolute top-[1.06px] left-[0px] w-[16.45px] h-[16.45px]"
                 alt=""
@@ -207,7 +210,7 @@ const FrameComponent2: NextPage = () => {
             <b className="absolute top-[0px] left-[0px] leading-[140%]">
               조회 키워드
             </b>
-            <div className="absolute top-[3.61px] left-[87.3px] w-[16.45px] h-[17.51px] text-left text-7xs text-gray-200">
+            <div className="absolute top-[3.61px] left-[87.3px] w-[16.45px] h-[17.51px] text-left text-6xs text-gray-200">
               <img
                 className="absolute top-[1.06px] left-[0px] w-[16.45px] h-[16.45px]"
                 alt=""
@@ -218,25 +221,25 @@ const FrameComponent2: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="absolute top-[135.98px] left-[679.11px] w-[32.23px] h-[18px] text-8xs text-forestgreen">
+          <div className="absolute top-[135.98px] left-[679.11px] w-[32.23px] h-[18px] text-7xs text-forestgreen">
             <div className="absolute top-[1.04px] left-[0px] rounded-5xxs bg-honeydew w-[32.23px] h-[15.81px]" />
             <div className="absolute top-[0px] left-[8.51px] leading-[140%] font-medium">
               +3
             </div>
           </div>
-          <div className="absolute top-[203.58px] left-[679.11px] w-[32.23px] h-[18px] text-8xs text-forestgreen">
+          <div className="absolute top-[203.58px] left-[679.11px] w-[32.23px] h-[18px] text-7xs text-forestgreen">
             <div className="absolute top-[1.04px] left-[0px] rounded-5xxs bg-honeydew w-[32.23px] h-[15.81px]" />
             <div className="absolute top-[0px] left-[8.51px] leading-[140%] font-medium">
               +3
             </div>
           </div>
-          <div className="absolute top-[271.96px] left-[679.11px] w-[32.23px] h-[18px] text-8xs text-orangered">
+          <div className="absolute top-[271.96px] left-[679.11px] w-[32.23px] h-[18px] text-7xs text-orangered">
             <div className="absolute top-[1.04px] left-[0px] rounded-5xxs bg-mistyrose w-[32.23px] h-[15.81px]" />
             <div className="absolute top-[0px] left-[8.51px] leading-[140%] font-medium">
               -25
             </div>
           </div>
-          <div className="absolute top-[341.13px] left-[679.11px] w-[32.23px] h-[18px] text-8xs text-forestgreen">
+          <div className="absolute top-[341.13px] left-[679.11px] w-[32.23px] h-[18px] text-7xs text-forestgreen">
             <div className="absolute top-[1.04px] left-[0px] rounded-5xxs bg-honeydew w-[32.23px] h-[15.81px]" />
             <div className="absolute top-[0px] left-[8.51px] leading-[140%] font-medium">
               +3
@@ -268,7 +271,7 @@ const FrameComponent2: NextPage = () => {
           </div>
           <div className="absolute top-[67.63px] left-[965.87px] w-[183.06px] h-[23px] text-right text-xs">
             <b className="absolute top-[0px] left-[0px] leading-[140%]">{`검색순위 (경쟁사 URL) `}</b>
-            <div className="absolute top-[3.61px] left-[166.61px] w-[16.45px] h-[17.51px] text-left text-7xs text-gray-200">
+            <div className="absolute top-[3.61px] left-[166.61px] w-[16.45px] h-[17.51px] text-left text-6xs text-gray-200">
               <img
                 className="absolute top-[1.06px] left-[0px] w-[16.45px] h-[16.45px]"
                 alt=""
@@ -278,25 +281,25 @@ const FrameComponent2: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className="absolute top-[135.98px] left-[1001.38px] w-[32.23px] h-[18px] text-8xs text-forestgreen">
+          <div className="absolute top-[135.98px] left-[1001.38px] w-[32.23px] h-[18px] text-7xs text-forestgreen">
             <div className="absolute top-[1.04px] left-[0px] rounded-5xxs bg-honeydew w-[32.23px] h-[15.81px]" />
             <div className="absolute top-[0px] left-[8.51px] leading-[140%] font-medium">
               +3
             </div>
           </div>
-          <div className="absolute top-[203.58px] left-[1001.38px] w-[32.23px] h-[18px] text-8xs text-forestgreen">
+          <div className="absolute top-[203.58px] left-[1001.38px] w-[32.23px] h-[18px] text-7xs text-forestgreen">
             <div className="absolute top-[1.04px] left-[0px] rounded-5xxs bg-honeydew w-[32.23px] h-[15.81px]" />
             <div className="absolute top-[0px] left-[8.51px] leading-[140%] font-medium">
               +3
             </div>
           </div>
-          <div className="absolute top-[271.96px] left-[1001.38px] w-[32.23px] h-[18px] text-8xs text-orangered">
+          <div className="absolute top-[271.96px] left-[1001.38px] w-[32.23px] h-[18px] text-7xs text-orangered">
             <div className="absolute top-[1.04px] left-[0px] rounded-5xxs bg-mistyrose w-[32.23px] h-[15.81px]" />
             <div className="absolute top-[0px] left-[8.51px] leading-[140%] font-medium">
               -25
             </div>
           </div>
-          <div className="absolute top-[341.13px] left-[1001.38px] w-[32.23px] h-[18px] text-8xs text-forestgreen">
+          <div className="absolute top-[341.13px] left-[1001.38px] w-[32.23px] h-[18px] text-7xs text-forestgreen">
             <div className="absolute top-[1.04px] left-[0px] rounded-5xxs bg-honeydew w-[32.23px] h-[15.81px]" />
             <div className="absolute top-[0px] left-[8.51px] leading-[140%] font-medium">
               +3
