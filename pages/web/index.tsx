@@ -1,21 +1,36 @@
 import type { NextPage } from 'next';
+import Link from 'next/link';
 
 const FrameComponent3: NextPage = () => {
   return (
-    <div className="flex flex-col items-center w-screen max-h-[8000px] bg-white text-29xl text-black font-pretendard whitespace-nowrap">
+    <div className="flex flex-col items-center w-screen max-h-fit bg-white text-29xl font-pretendard whitespace-nowrap">
       <div className="flex flex-col items-center fixed z-10 w-full bg-white">
         <div className="flex flex-row items-center w-10/12 h-24 text-9xl">
-          <img className="flex-none w-[140px]" alt="" src="/images/logo.png" />
+          <Link href="#">
+            <img
+              className="flex-none w-[140px]"
+              alt=""
+              src="/images/logo-1.png"
+            />
+          </Link>
           <div className="grow"></div>
           <div className="flex-none flex flex-row items-center justify-between gap-16">
-            <b className="text-xs font-semibold tracking-[0.02em]">CONTACT</b>
-            <b className="bg-mediumslateblue hover:bg-black rounded-lg box-border border-[1.5px] border-solid border-black py-2 px-8 text-xs text-white font-extrabold tracking-[0.05em] ">
+            <Link
+              href="web/contact"
+              className="text-xs font-semibold tracking-[0.02em]"
+            >
+              CONTACT
+            </Link>
+            <Link
+              href="#"
+              className="bg-mediumslateblue hover:bg-black rounded-full py-2 px-8 text-xs text-white font-extrabold tracking-[0.05em]"
+            >
               신청하기
-            </b>
+            </Link>
           </div>
         </div>
       </div>
-      <div className="h-56"></div>
+      <div className="h-52"></div>
       <div className="w-10/12 flex flex-row items-center justify-center gap-24">
         <div className="w-[500px] pl-6">
           <div className="text-20xl font-extrabold">
@@ -24,35 +39,35 @@ const FrameComponent3: NextPage = () => {
           <div className="h-4"></div>
           <div className="text-sm leading-[160%] font-medium">
             <p className="">
-              ✔ 내 사이트가 키워드별 검색결과 몇 번째에 뜨는지 확인해보세요.
+              ✔ 내 사이트가 키워드별 검색결과 몇 번째에 뜨는지 확인하세요.
             </p>
             <p className="[">✔ 경쟁사의 검색 순위도 함께 확인하세요.</p>
             <p className="">✔ 매주 뉴스레터를 보내드립니다.</p>
           </div>
           <div className="h-10"></div>
-          <span className="mb-1 pl-4 block text-5xs font-light italic text-slate-700">
+          <span className="mb-1 pl-5 block text-5xs font-light italic text-gray-700">
             Your email-address:
           </span>
-          <div className="w-[430px] flex flex-row justify-between items-center rounded-lg box-border border-[1px] border-solid border-black px-[3px] py-[3px]">
+          <div className="w-[400px] flex flex-row justify-between items-center rounded-full box-border border-[1px] border-solid border-black text-black px-[3px] py-[3px]">
             <input
-              className="w-[240px] placeholder:italic placeholder:text-gray-200 opacity-40 bg-white focus:outline-none font-medium text-4xs px-4"
-              placeholder="mail@example.com"
+              className="w-[200px] placeholder:italic placeholder:text-gray-200 opacity-40 bg-white focus:outline-none font-medium text-4xs px-5"
+              placeholder="email@example.com"
               type="email"
               name="email"
             />
-            <b className="bg-mediumslateblue hover:bg-black hover:text-white box-border border-[1.5px] border-solid border-black rounded-lg py-2 px-6 text-base text-white font-bold tracking-[0.02em]">
+            <b className="bg-mediumslateblue hover:bg-black hover:text-white rounded-full py-2 px-6 text-sm text-white font-bold tracking-[0.02em]">
               런칭알림 신청하기
             </b>
           </div>
           <div className="h-4"></div>
-          <div className="pl-4 text-gray-600 text-6xs leading-[150%]">
+          <div className="pl-3 text-gray-600 text-6xs leading-[150%]">
             <p className="">
               · 기입하신 이메일 주소로 프로덕트 런칭 알림을 보내드립니다.
               <br></br>· 서비스는 런칭 후 1달간 무료로 제공됩니다.
             </p>
           </div>
         </div>
-        <div className="max-w-[700px] min-w-[600px] mb-4">
+        <div className="max-w-[700px] min-w-[600px] pb-12">
           <img className="w-full" alt="" src="/images/index.png" />
         </div>
       </div>
@@ -120,13 +135,13 @@ const FrameComponent3: NextPage = () => {
           <span className="font-extrabold tracking-wide">뉴스레터</span>
           <span className="font-light">까지</span>
         </div>
-        <b className="bg-white hover:bg-black hover:text-white box-border border-[2px] border-solid border-black rounded-lg py-3 px-12 text-2xl font-bold tracking-[0.05em]">
+        <b className="bg-white hover:bg-black hover:text-white box-border border-[2px] border-solid border-black rounded-full py-3 px-12 text-2xl font-bold tracking-[0.05em]">
           런칭알림 신청하기
         </b>
       </div>
       <div className="h-48"></div>
-      <div className="flex flex-row items-center justify-between gap-36">
-        <div className="w-[600px] mb-4">
+      <div className="flex flex-row items-center justify-between gap-28">
+        <div className="w-[520px] mb-4">
           <img className="w-full" alt="" src="/images/feature-1.png" />
         </div>
         <div className="w-fit flex flex-row items-center gap-10">
@@ -144,7 +159,6 @@ const FrameComponent3: NextPage = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-[133.16px] left-[calc(50%_-_788.54px)] w-[838px] h-[460.35px] text-right text-7xl font-noto-sans-kr"></div>
       </div>
       <div className="h-60"></div>
       <div className="flex flex-col justify-between gap-8">
@@ -188,9 +202,9 @@ const FrameComponent3: NextPage = () => {
         </div>
       </div>
       <div className="h-60"></div>
-      <div className="w-full h-[240px] flex flex-col items-center justify-center gap-8 bg-mediumslateblue text-white text-center">
-        <div className="w-full text-10xl font-bold">URLank</div>
-        <div className="text-2xl font-medium">
+      <div className="w-full h-[240px] flex flex-col items-center justify-center gap-10 bg-mediumslateblue text-white text-center">
+        <div className="w-full text-10xl font-bold tracking-wider">URLank</div>
+        <div className="text-base font-regular">
           © URLank. ALL RIGHTS RESERVED.
         </div>
       </div>
