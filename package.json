@@ -17,6 +17,8 @@
     "@sanity/client": "^4.0.1",
     "@sanity/image-url": "^1.0.2",
     "@sentry/nextjs": "^7.33.0",
+    "axios": "^1.2.4",
+    "cheerio": "^1.0.0-rc.12",
     "daisyui": "^2.47.0",
     "flowbite": "^1.6.3",
     "flowbite-react": "^0.3.7",
@@ -24,9 +26,11 @@
     "next": "13.1.5",
     "next-auth": "^4.18.10",
     "next-auth-sanity": "^1.4.4",
+    "puppeteer": "^19.6.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "recoil": "^0.7.6"
+    "recoil": "^0.7.6",
+    "serp": "^2.2.2"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
