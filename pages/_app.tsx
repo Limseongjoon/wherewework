@@ -7,8 +7,9 @@ import * as gtag from '../lib/gtag';
 import ChannelService from '../lib/ChannelService';
 import Script from 'next/script';
 import { ChakraProvider } from '@chakra-ui/react';
+import { SessionProvider } from 'next-auth/react';
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   // GA
   // const router = useRouter();
   // useEffect(() => {
@@ -57,13 +58,15 @@ function App({ Component, pageProps }: AppProps) {
         }}
       /> */}
       <RecoilRoot>
-        <ChakraProvider theme={{}}>
-          {/* <div className="bg-gray-200">
+        {/* <ChakraProvider theme={{}}> */}
+        {/* <div className="bg-gray-200">
             <div className="max-w-md mx-auto bg-white min-h-screen"> */}
+        <SessionProvider session={session}>
           <Component {...pageProps} />
-          {/* </div>
+        </SessionProvider>
+        {/* </div>
           </div> */}
-        </ChakraProvider>
+        {/* </ChakraProvider> */}
       </RecoilRoot>
     </>
   );
