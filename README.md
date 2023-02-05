@@ -38,3 +38,15 @@ headless UI / NextUI 등 적용 / Chakra 는 빼기 (폰트 문제)
 Pretendard 폰트 적용
 
 https://fe-developers.kakaoent.com/2022/220714-next-image/
+
+channeltalk + 해외 서비스 하나
+supabase, pocketbase, sanity 중 택 1
+
+mui, bootstrap, ant design - 추후 추가
+Daisy UI, Flowbite - 이미 추가 완료
+HyperUI, Headless UI - 코드 조각 필요할 때 가져오기
+
+# TODO
+
+- SEO 세팅
+- 폰트 최적화 (중간에 바뀌는 것 어떻게 해결?)
