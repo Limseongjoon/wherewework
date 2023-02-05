@@ -1,12 +1,17 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import { applicationState } from '../atoms/atoms';
 
 const FrameComponent1: NextPage = () => {
+  const [application, setApplication] = useRecoilState(applicationState);
+
   return (
     <div className="flex flex-col items-center w-screen max-h-fit bg-[#33333D] text-29xl font-pretendard whitespace-nowrap">
       <div className="flex flex-col items-center bg-[#33333D] fixed z-10 w-full">
         <div className="flex flex-row items-center bg-[#33333D] w-10/12 h-16 lg:h-24 text-9xl">
-          <Link href="/web">
+          <Link href="/">
             <img
               className="flex-none w-[80px] lg:w-[140px]"
               alt=""
@@ -22,7 +27,7 @@ const FrameComponent1: NextPage = () => {
               CONTACT
             </Link>
             <Link
-              href="/web"
+              href="/"
               className="bg-mediumslateblue hover:bg-black rounded-full py-1.5 lg:py-2 px-4 lg:px-8 text-7xs lg:text-xs text-white font-extrabold lg:tracking-[0.05em]"
             >
               신청하기
@@ -42,10 +47,14 @@ const FrameComponent1: NextPage = () => {
               </span>
               <div className="w-full flex flex-row justify-between items-center rounded-xl bg-[#F4F6FA]  text-black px-2 py-3">
                 <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] focus:outline-none font-medium text-4xs px-3"
+                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-4xs px-3"
                   placeholder="Full Name"
                   type="name"
                   name="name"
+                  defaultValue={application.name}
+                  onChange={(e) =>
+                    setApplication({ ...application, name: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -55,10 +64,14 @@ const FrameComponent1: NextPage = () => {
               </span>
               <div className="w-full flex flex-row justify-between items-center rounded-xl bg-[#F4F6FA] text-black px-2 py-3">
                 <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] focus:outline-none font-medium text-4xs px-3"
+                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-4xs px-3"
                   placeholder="Email Address"
                   type="email"
                   name="email"
+                  defaultValue={application.email}
+                  onChange={(e) =>
+                    setApplication({ ...application, email: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -70,10 +83,14 @@ const FrameComponent1: NextPage = () => {
               </span>
               <div className="w-full flex flex-row justify-between items-center rounded-lg bg-[#F4F6FA]  text-black px-2 py-3">
                 <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] focus:outline-none font-medium text-5xs px-2"
+                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
                   placeholder="Full Name"
                   type="name"
                   name="name"
+                  defaultValue={application.name}
+                  onChange={(e) =>
+                    setApplication({ ...application, name: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -83,10 +100,14 @@ const FrameComponent1: NextPage = () => {
               </span>
               <div className="w-full flex flex-row justify-between items-center rounded-lg bg-[#F4F6FA] text-black px-2 py-3">
                 <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] focus:outline-none font-medium text-5xs px-2"
+                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
                   placeholder="Email Address"
                   type="email"
                   name="email"
+                  defaultValue={application.email}
+                  onChange={(e) =>
+                    setApplication({ ...application, email: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -97,9 +118,13 @@ const FrameComponent1: NextPage = () => {
             </span>
             <div className="w-full rounded-lg bg-[#F4F6FA] text-black px-2 py-3">
               <textarea
-                className="w-full h-32 placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] focus:outline-none font-medium text-5xs px-2"
-                placeholder="Write your contents here"
-                name="contents"
+                className="w-full h-32 placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
+                placeholder="Write your message here"
+                name="message"
+                defaultValue={application.message}
+                onChange={(e) =>
+                  setApplication({ ...application, message: e.target.value })
+                }
               />
             </div>
           </div>

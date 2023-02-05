@@ -1,7 +1,20 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import { useRef } from 'react';
+import { useRecoilState } from 'recoil';
+import { emailState } from '../atoms/atoms';
 
 const FrameComponent3: NextPage = () => {
+  const [email, setEmail] = useRecoilState(emailState);
+
+  const topRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const executeScroll = () => {
+    topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    inputRef.current?.focus({ preventScroll: true });
+  };
+
   return (
     <div className="flex flex-col items-center w-screen max-h-fit bg-white text-29xl font-pretendard whitespace-nowrap">
       <div className="flex flex-col items-center fixed z-10 w-full bg-white">
@@ -16,20 +29,23 @@ const FrameComponent3: NextPage = () => {
           <div className="grow"></div>
           <div className="flex-none flex flex-row items-center justify-between gap-4 lg:gap-16">
             <Link
-              href="web/contact"
+              href="/contact"
               className="text-7xs lg:text-xs font-semibold lg:tracking-[0.02em]"
             >
               CONTACT
             </Link>
-            <Link
-              href="#"
+            <div
               className="bg-mediumslateblue hover:bg-black rounded-full py-1.5 lg:py-2 px-4 lg:px-8 text-7xs lg:text-xs text-white font-extrabold lg:tracking-[0.05em]"
+              onClick={() => {
+                executeScroll();
+              }}
             >
               신청하기
-            </Link>
+            </div>
           </div>
         </div>
       </div>
+      <div ref={topRef}></div>
       <div className="h-28 lg:h-52"></div>
       <div className="w-10/12 lg:w-8/12 flex flex-col lg:flex-row items-center justify-center gap-24">
         <div className="w-fit lx:pl-6">
@@ -50,12 +66,15 @@ const FrameComponent3: NextPage = () => {
           </span>
           <div className="lg:w-[400px] flex flex-row justify-between items-center rounded-full box-border border-[1px] border-solid border-black text-black px-[3px] py-[3px]">
             <input
-              className="w-[200px] placeholder:italic placeholder:text-gray-200 opacity-40 bg-white focus:outline-none font-medium text-4xs px-5"
+              className="w-[200px] placeholder:italic placeholder:text-gray-200 opacity-40 bg-white border-0 outline-0 font-medium text-4xs px-5"
               placeholder="email@example.com"
               type="email"
               name="email"
+              ref={inputRef}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <b className="bg-mediumslateblue hover:bg-black hover:text-white rounded-full py-2 px-6 text-sm text-white font-bold lg:tracking-[0.02em]">
+            <b className="bg-mediumslateblue hover:bg-black hover:text-white rounded-full py-2 px-6 text-sm text-white font-bold lg:tracking-[0.02em] select-none cursor-pointer">
               런칭알림 신청하기
             </b>
           </div>
