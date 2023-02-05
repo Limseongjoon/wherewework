@@ -35,7 +35,7 @@ const FrameComponent1: NextPage = () => {
         <div className="font-bold text-14xl">CONTACT</div>
         <div className="h-4"></div>
         <div className="flex flex-col w-full">
-          <div className="flex flex-row justify-between w-full gap-12">
+          <div className="hidden lg:flex flex-row justify-between w-full gap-12">
             <div className="w-1/2">
               <span className="mb-1 pl-5 text-sm leading-[160%] font-medium">
                 이름
@@ -50,6 +50,34 @@ const FrameComponent1: NextPage = () => {
               </div>
             </div>
             <div className="w-1/2">
+              <span className="mb-1 pl-5 text-sm leading-[160%] font-medium">
+                메일 주소
+              </span>
+              <div className="w-full flex flex-row justify-between items-center rounded-xl bg-[#F4F6FA] text-black px-2 py-3">
+                <input
+                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] focus:outline-none font-medium text-4xs px-3"
+                  placeholder="Email Address"
+                  type="email"
+                  name="email"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="lg:hidden flex flex-col w-full">
+            <div className="w-full">
+              <span className="mb-1 pl-5 text-sm leading-[160%] font-medium">
+                이름
+              </span>
+              <div className="w-full flex flex-row justify-between items-center rounded-xl bg-[#F4F6FA]  text-black px-2 py-3">
+                <input
+                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] focus:outline-none font-medium text-4xs px-3"
+                  placeholder="Full Name"
+                  type="name"
+                  name="name"
+                />
+              </div>
+            </div>
+            <div className="w-full">
               <span className="mb-1 pl-5 text-sm leading-[160%] font-medium">
                 메일 주소
               </span>
