@@ -21,9 +21,12 @@ const FrameComponent1: NextPage = () => {
             >
               CONTACT
             </Link>
-            <b className="bg-mediumslateblue hover:bg-black rounded-full py-2 px-8 text-xs text-white font-extrabold tracking-[0.05em] ">
+            <Link
+              href="/web"
+              className="bg-mediumslateblue hover:bg-black rounded-full py-2 px-8 text-xs text-white font-extrabold tracking-[0.05em]"
+            >
               신청하기
-            </b>
+            </Link>
           </div>
         </div>
       </div>
