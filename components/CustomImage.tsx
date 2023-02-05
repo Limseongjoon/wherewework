@@ -7,7 +7,7 @@ const CustomImage = ({
   priority,
 }: {
   className?: string;
-  src?: string; // /images/ 뒤에 붙는 걸로
+  src?: string;
   alt?: string;
   priority?: boolean;
 }) => {
