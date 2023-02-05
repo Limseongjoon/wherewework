@@ -1,7 +1,8 @@
 import { atom } from 'recoil';
+import { v4 } from 'uuid';
 
 export const sampleState = atom({
-  key: 'sampleState',
+  key: `sampleState/${v4()}`,
   default: [],
 });
 

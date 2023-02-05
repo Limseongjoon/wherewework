@@ -1,0 +1,13 @@
+# name: Trigger set-closing-price
+
+# on:
+#   schedule:
+#     - cron: '0 15 * * *'
+# jobs:
+#   build:
+#     name: Trigger set-closing-price
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: cURL request
+#         # Hit the webhook endpoint to rebuild  from the "main" branch
+#         run: curl -X GET -d {} [특정 API]
