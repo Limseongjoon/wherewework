@@ -1,15 +1,15 @@
-# name: Deploy main
+name: Deploy main
 
-# on:
-#   push:
-#     branches:
-#     - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   build:
-#     name: Deploy main
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: cURL request
-#         # Hit the webhook endpoint to rebuild  from the "main" branch
-#         run: curl -X POST [vercel deploy hook 주소]
+jobs:
+  build:
+    name: Deploy main
+    runs-on: ubuntu-latest
+    steps:
+      - name: cURL request
+        # Hit the webhook endpoint to rebuild  from the "main" branch
+        run: curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_vZi7Yp8loJ3G6zQwzrM9yRn45iS5/ZbtdKxRdCf
