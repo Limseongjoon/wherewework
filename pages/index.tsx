@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useRecoilState } from 'recoil';
 import { emailState } from '../atoms/atoms';
+import { supabase } from '../lib/client';
 
 const FrameComponent3: NextPage = () => {
   const [email, setEmail] = useRecoilState(emailState);
@@ -48,7 +49,7 @@ const FrameComponent3: NextPage = () => {
       <div ref={topRef}></div>
       <div className="h-28 lg:h-52"></div>
       <div className="w-10/12 lg:w-8/12 flex flex-col lg:flex-row lg:items-center justify-center gap-12 lg:gap-24">
-        <div className="w-fit lx:pl-6">
+        <div className="w-fit lg:pl-6">
           <div className="text-10xl lg:text-18xl font-extrabold">
             내 사이트 검색순위 확인
           </div>
@@ -66,7 +67,7 @@ const FrameComponent3: NextPage = () => {
           </span>
           <div className="lg:w-[400px] flex flex-row justify-between items-center rounded-full box-border border-[1px] border-solid border-black text-black px-[3px] py-[3px]">
             <input
-              className="w-[200px] placeholder:italic placeholder:text-gray-200 opacity-40 bg-white border-0 outline-0 font-medium text-4xs px-5"
+              className="w-[200px] placeholder:italic placeholder:text-gray-200 placeholder:text-opacity-40 text-mediumslateblue bg-white border-0 outline-0 placeholder:font-medium font-semibold text-4xs px-5"
               placeholder="email@example.com"
               type="email"
               name="email"
@@ -74,7 +75,42 @@ const FrameComponent3: NextPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <b className="bg-mediumslateblue hover:bg-black hover:text-white rounded-full py-2 px-6 text-6xs lg:text-base text-white font-bold lg:tracking-[0.02em] select-none cursor-pointer">
+            <b
+              className="bg-mediumslateblue hover:bg-black hover:text-white rounded-full py-2 px-6 text-6xs lg:text-base text-white font-bold lg:tracking-[0.02em] select-none cursor-pointer"
+              onClick={async (e) => {
+                e.preventDefault();
+                if (
+                  email &&
+                  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                ) {
+                  // 이미 신청한 이메일이면 안내
+                  const { data, error } = await supabase()
+                    .from('emails')
+                    .select()
+                    .eq('email', email)
+                    .single();
+
+                  if (data) {
+                    await supabase()
+                      .from('emails')
+                      .update({
+                        count: data.count ? data.count + 1 : 1,
+                      })
+                      .eq('email', email);
+                    alert('이미 신청하셨습니다.');
+                  } else {
+                    await supabase().from('emails').insert({
+                      email: email,
+                      count: 1,
+                    });
+                    alert('신청이 완료되었습니다.');
+                  }
+                  setEmail('');
+                } else {
+                  alert('올바른 이메일 주소를 입력해주세요.');
+                }
+              }}
+            >
               런칭알림 신청하기
             </b>
           </div>
