@@ -137,11 +137,11 @@ export default function Document() {
         <meta name="theme-color" content="#ffffff"></meta>
 
         <meta property="title" content="URLank" />
-        <meta property="og:title" content="URLank" />
         <meta
-          property="og:description"
-          content="키워드별 내 사이트 검색순위 확인"
+          property="og:title"
+          content="URLank - 키워드별 내 사이트 검색순위 확인"
         />
+        {/* <meta property="og:description" content="" /> */}
         <meta property="og:image" content="/images/ogimage.png" />
       </Head>
       <body>
