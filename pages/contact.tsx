@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { applicationState } from '../atoms/atoms';
+import { supabase } from '../lib/client';
 
 const FrameComponent1: NextPage = () => {
   const [application, setApplication] = useRecoilState(applicationState);
@@ -43,7 +44,7 @@ const FrameComponent1: NextPage = () => {
           <div className="hidden lg:flex flex-row justify-between w-full gap-8">
             <div className="w-1/2">
               <span className="mb-1 pl-5 text-8xs text-sm leading-[160%] font-medium">
-                이름
+                이름 *
               </span>
               <div className="w-full flex flex-row justify-between items-center rounded-xl bg-[#F4F6FA]  text-black px-2 py-3">
                 <input
@@ -51,7 +52,7 @@ const FrameComponent1: NextPage = () => {
                   placeholder="Full Name"
                   type="name"
                   name="name"
-                  defaultValue={application.name}
+                  value={application.name}
                   onChange={(e) =>
                     setApplication({ ...application, name: e.target.value })
                   }
@@ -60,7 +61,7 @@ const FrameComponent1: NextPage = () => {
             </div>
             <div className="w-1/2">
               <span className="mb-1 pl-5 text-sm leading-[160%] font-medium">
-                메일 주소
+                메일 주소 *
               </span>
               <div className="w-full flex flex-row justify-between items-center rounded-xl bg-[#F4F6FA] text-black px-2 py-3">
                 <input
@@ -68,7 +69,7 @@ const FrameComponent1: NextPage = () => {
                   placeholder="Email Address"
                   type="email"
                   name="email"
-                  defaultValue={application.email}
+                  value={application.email}
                   onChange={(e) =>
                     setApplication({ ...application, email: e.target.value })
                   }
@@ -79,15 +80,15 @@ const FrameComponent1: NextPage = () => {
           <div className="lg:hidden flex flex-col w-full">
             <div className="w-full">
               <span className="mb-1 pl-3 text-4xs lg:text-sm leading-[160%] font-medium">
-                이름
+                이름 *
               </span>
-              <div className="w-full flex flex-row justify-between items-center rounded-lg bg-[#F4F6FA]  text-black px-2 py-3">
+              <div className="w-full flex flex-row justify-between items-center rounded-lg bg-[#F4F6FA] text-black px-2 py-3">
                 <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
+                  className="w-full placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
                   placeholder="Full Name"
                   type="name"
                   name="name"
-                  defaultValue={application.name}
+                  value={application.name}
                   onChange={(e) =>
                     setApplication({ ...application, name: e.target.value })
                   }
@@ -96,15 +97,15 @@ const FrameComponent1: NextPage = () => {
             </div>
             <div className="w-full">
               <span className="mb-1 pl-3 text-4xs leading-[160%] font-medium">
-                메일 주소
+                메일 주소 *
               </span>
               <div className="w-full flex flex-row justify-between items-center rounded-lg bg-[#F4F6FA] text-black px-2 py-3">
                 <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
+                  className="w-full placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
                   placeholder="Email Address"
                   type="email"
                   name="email"
-                  defaultValue={application.email}
+                  value={application.email}
                   onChange={(e) =>
                     setApplication({ ...application, email: e.target.value })
                   }
@@ -118,10 +119,10 @@ const FrameComponent1: NextPage = () => {
             </span>
             <div className="w-full rounded-lg bg-[#F4F6FA] text-black px-2 py-3">
               <textarea
-                className="w-full h-32 placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
+                className="w-full h-32 placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
                 placeholder="Write your message here"
                 name="message"
-                defaultValue={application.message}
+                value={application.message}
                 onChange={(e) =>
                   setApplication({ ...application, message: e.target.value })
                 }
@@ -130,7 +131,30 @@ const FrameComponent1: NextPage = () => {
           </div>
           <div className="lg:h-4"></div>
           <div className="self-center">
-            <b className="bg-mediumslateblue hover:bg-black rounded-full py-2 lg:py-3 px-8 lg:px-12 text-2xs lg:text-base text-white font-bold tracking-[0.05em] ">
+            <b
+              className="bg-mediumslateblue hover:bg-black rounded-full py-2 lg:py-3 px-8 lg:px-12 text-2xs lg:text-base text-white font-bold tracking-[0.05em] select-none cursor-pointer"
+              onClick={async () => {
+                console.log(application);
+                if (!application.name) {
+                  alert('이름을 입력해주세요.');
+                } else if (
+                  !application.email ||
+                  !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+                    application.email
+                  )
+                ) {
+                  alert('올바른 이메일을 입력해주세요.');
+                } else {
+                  await supabase().from('messages').insert(application);
+                  setApplication({
+                    name: '',
+                    email: '',
+                    message: '',
+                  });
+                  alert('메일이 전송되었습니다.');
+                }
+              }}
+            >
               메일 전송하기
             </b>
           </div>
