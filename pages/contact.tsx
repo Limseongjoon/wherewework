@@ -115,11 +115,11 @@ const FrameComponent1: NextPage = () => {
                     email: '',
                     message: '',
                   });
-                  alert('메일이 전송되었습니다.');
+                  alert('문의가 접수되었습니다.');
                 }
               }}
             >
-              메일 전송하기
+              문의하기
             </b>
           </div>
         </div>
