@@ -17,7 +17,7 @@ const FrameComponent3: NextPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center w-screen max-h-fit bg-white text-29xl font-pretendard whitespace-nowrap">
+    <div className="flex flex-col items-center w-screen max-h-fit bg-white text-29xl font-pretendard">
       <div className="flex flex-col items-center fixed z-10 w-full bg-white">
         <div className="flex flex-row items-center w-10/12 h-16 lg:h-24 text-9xl">
           <Link href="#">
@@ -47,27 +47,27 @@ const FrameComponent3: NextPage = () => {
         </div>
       </div>
       <div ref={topRef}></div>
-      <div className="h-28 lg:h-52"></div>
-      <div className="w-10/12 lg:w-8/12 flex flex-col lg:flex-row lg:items-center justify-center gap-12 lg:gap-24">
-        <div className="w-fit lg:pl-6">
+      <div className="h-16 lg:h-24"></div>
+      <div className="mt-8 lg:mt-16 px-8 lg:px-16 flex flex-col lg:flex-row lg:items-center justify-center gap-12 lg:gap-16">
+        <div className="lg:pl-6 md:min-w-fit">
           <div className="text-10xl lg:text-18xl font-extrabold">
             내 사이트 검색순위 확인
           </div>
           <div className="h-2"></div>
-          <div className="text-5xs lg:text-sm leading-[60%] font-medium">
-            <p className="">
+          <div className="text-5xs lg:text-sm font-medium">
+            <p className="my-2">
               ✔ 내 사이트가 키워드별 검색결과 몇 번째에 뜨는지 확인하세요.
             </p>
-            <p className="">✔ 경쟁사의 검색 순위도 함께 확인하세요.</p>
-            <p className="">✔ 매주 뉴스레터를 보내드립니다.</p>
+            <p className="my-2">✔ 경쟁사의 검색 순위도 함께 확인하세요.</p>
+            <p className="my-2">✔ 매주 뉴스레터를 보내드립니다.</p>
           </div>
           <div className="h-6"></div>
           <span className="mb-1 pl-5 block text-5xs font-light italic text-gray-700">
             Your email-address:
           </span>
-          <div className="lg:w-[400px] flex flex-row justify-between items-center rounded-full box-border border-[1px] border-solid border-black text-black px-[3px] py-[3px]">
+          <div className="w-fit flex flex-row items-center rounded-full box-border border-[1px] border-solid border-black text-black px-[3px] py-[3px]">
             <input
-              className="w-[200px] placeholder:italic placeholder:text-gray-200 placeholder:text-opacity-40 text-mediumslateblue bg-white border-0 outline-0 placeholder:font-medium font-semibold text-4xs px-5"
+              className="w-full placeholder:italic placeholder:text-gray-200 placeholder:text-opacity-40 text-mediumslateblue bg-white border-0 outline-0 placeholder:font-medium font-semibold text-4xs px-5"
               placeholder="email@example.com"
               type="email"
               name="email"
@@ -76,7 +76,7 @@ const FrameComponent3: NextPage = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <b
-              className="bg-mediumslateblue hover:bg-black hover:text-white rounded-full py-2 px-6 text-6xs lg:text-base text-white font-bold lg:tracking-[0.02em] select-none cursor-pointer"
+              className="min-w-fit lg:min-w-fit sm:flex sm:gap-1 bg-mediumslateblue hover:bg-black hover:text-white rounded-full py-2 px-6 text-6xs lg:text-base text-white font-bold lg:tracking-[0.02em] select-none cursor-pointer"
               onClick={async (e) => {
                 e.preventDefault();
                 if (
@@ -111,20 +111,16 @@ const FrameComponent3: NextPage = () => {
                 }
               }}
             >
-              런칭알림 신청하기
+              <div>런칭알림</div>
+              <div>신청하기</div>
             </b>
           </div>
-          <div className="pl-3 text-gray-600 text-6xs leading-[150%]">
-            <p className="">
-              · 기입하신 이메일 주소로 프로덕트 런칭 알림을 보내드립니다.
-              <br></br>· 서비스는 런칭 후 1달간 무료로 제공됩니다.
-            </p>
+          <div className="mt-2 pl-3 text-gray-600 text-6xs leading-[150%]">
+            · 기입하신 이메일 주소로 프로덕트 런칭 알림을 보내드립니다.
+            <br />· 서비스는 런칭 후 1달간 무료로 제공됩니다.
           </div>
         </div>
-        <div className="hidden lg:flex min-w-[600px] pb-12">
-          <img className="w-full" alt="" src="/images/index.png" />
-        </div>
-        <div className="flex lg:hidden pb-12 w-fit">
+        <div className="pb-12">
           <img className="w-full" alt="" src="/images/index.png" />
         </div>
       </div>
@@ -173,7 +169,12 @@ const FrameComponent3: NextPage = () => {
             <br></br>매주 챙겨받는 뉴스레터까지
           </span>
         </div>
-        <b className="bg-white hover:bg-black hover:text-white box-border border-[2px] border-solid border-black rounded-full py-2 lg:py-3 px-8 lg:px-12 text-4xs lg:text-2xl font-bold lg:tracking-[0.05em]">
+        <b
+          className="bg-white hover:bg-black hover:text-white box-border border-[2px] border-solid border-black rounded-full py-2 lg:py-3 px-8 lg:px-12 text-4xs lg:text-2xl font-bold lg:tracking-[0.05em]"
+          onClick={() => {
+            executeScroll();
+          }}
+        >
           런칭알림 신청하기
         </b>
       </div>
@@ -187,11 +188,11 @@ const FrameComponent3: NextPage = () => {
             1
           </div>
           <div>
-            <div className="text-6xl lg:text-20xl font-bold leading-[140%] whitespace-nowrap">
+            <div className="text-6xl lg:text-20xl font-bold leading-[140%]">
               키워드 및 URL 입력
             </div>
             <div className="h-2 lg:h-4"></div>
-            <div className="text-2xs lg:text-8xl font-regular leading-[140%] whitespace-nowrap">
+            <div className="text-2xs lg:text-8xl font-regular leading-[140%]">
               검색순위가 궁금한 키워드들과 자사 URL<br></br>또는 타사 URL을
               입력창에 입력합니다.
             </div>
@@ -230,11 +231,11 @@ const FrameComponent3: NextPage = () => {
             3
           </div>
           <div>
-            <div className="text-6xl lg:text-20xl font-bold leading-[140%] whitespace-nowrap">
+            <div className="text-6xl lg:text-20xl font-bold leading-[140%]">
               트래킹 보고서 메일 발송
             </div>
             <div className="h-2 lg:h-4"></div>
-            <div className="text-2xs lg:text-8xl font-regular leading-[140%] whitespace-nowrap">
+            <div className="text-2xs lg:text-8xl font-regular leading-[140%]">
               매주 트래킹 정보가 담긴 뉴스레터를<br></br>메일로 발송해드립니다.
             </div>
           </div>
