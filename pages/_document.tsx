@@ -137,10 +137,10 @@ export default function Document() {
         <meta name="theme-color" content="#ffffff"></meta>
 
         <meta property="title" content="URLank" />
-        <meta property="og:title" content="내 사이트 검색순위 확인" />
+        <meta property="og:title" content="URLank" />
         <meta
           property="og:description"
-          content="내 사이트가 키워드별 검색결과 몇 번째에 뜨는지 확인하세요"
+          content="키워드별 내 사이트 검색순위 확인"
         />
         <meta property="og:image" content="/images/ogimage.png" />
       </Head>

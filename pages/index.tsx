@@ -63,7 +63,7 @@ const FrameComponent3: NextPage = () => {
           </div>
           <div className="h-6"></div>
           <span className="mb-1 pl-5 block text-5xs font-light italic text-gray-700">
-            Your email-address:
+            이메일 주소:
           </span>
           <div className="w-fit flex flex-row items-center rounded-full box-border border-[1px] border-solid border-black text-black px-[3px] py-[3px]">
             <input
