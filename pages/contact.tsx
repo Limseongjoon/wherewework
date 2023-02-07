@@ -41,50 +41,14 @@ const FrameComponent1: NextPage = () => {
         <div className="font-bold text-6xl lg:text-14xl pl-2">CONTACT</div>
         <div className="lg:h-4"></div>
         <div className="flex flex-col w-full">
-          <div className="hidden lg:flex flex-row justify-between w-full gap-8">
-            <div className="w-1/2">
-              <span className="mb-1 pl-5 text-8xs text-sm leading-[160%] font-medium">
-                이름 *
-              </span>
-              <div className="w-full flex flex-row justify-between items-center rounded-xl bg-[#F4F6FA]  text-black px-2 py-3">
-                <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-4xs px-3"
-                  placeholder="Full Name"
-                  type="name"
-                  name="name"
-                  value={application.name}
-                  onChange={(e) =>
-                    setApplication({ ...application, name: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-            <div className="w-1/2">
-              <span className="mb-1 pl-5 text-sm leading-[160%] font-medium">
-                메일 주소 *
-              </span>
-              <div className="w-full flex flex-row justify-between items-center rounded-xl bg-[#F4F6FA] text-black px-2 py-3">
-                <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-4xs px-3"
-                  placeholder="Email Address"
-                  type="email"
-                  name="email"
-                  value={application.email}
-                  onChange={(e) =>
-                    setApplication({ ...application, email: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-          </div>
-          <div className="lg:hidden flex flex-col w-full">
+          <div className="flex flex-col lg:flex-row lg:gap-8 w-full">
             <div className="w-full">
               <span className="mb-1 pl-3 text-4xs lg:text-sm leading-[160%] font-medium">
                 이름 *
               </span>
               <div className="w-full flex flex-row justify-between items-center rounded-lg bg-[#F4F6FA] text-black px-2 py-3">
                 <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
+                  className="w-full placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2 text-black"
                   placeholder="Full Name"
                   type="name"
                   name="name"
@@ -99,9 +63,9 @@ const FrameComponent1: NextPage = () => {
               <span className="mb-1 pl-3 text-4xs leading-[160%] font-medium">
                 메일 주소 *
               </span>
-              <div className="w-full flex flex-row justify-between items-center rounded-lg bg-[#F4F6FA] text-black px-2 py-3">
+              <div className="w-full flex flex-row justify-between items-center rounded-lg bg-[#F4F6FA] px-2 py-3">
                 <input
-                  className="w-full placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
+                  className="w-full placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2 text-black"
                   placeholder="Email Address"
                   type="email"
                   name="email"
@@ -119,7 +83,7 @@ const FrameComponent1: NextPage = () => {
             </span>
             <div className="w-full rounded-lg bg-[#F4F6FA] text-black px-2 py-3">
               <textarea
-                className="w-full h-32 placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2"
+                className="w-full h-32 placeholder:italic placeholder:text-gray-200 placeholder:opacity-40 bg-[#F4F6FA] border-0 outline-0 font-medium text-5xs px-2 text-black"
                 placeholder="Write your message here"
                 name="message"
                 value={application.message}
