@@ -20,7 +20,7 @@ const FrameComponent3: NextPage = () => {
     <div className="flex flex-col items-center w-screen max-h-fit bg-white text-29xl font-pretendard">
       <div className="flex flex-col items-center fixed z-10 w-full bg-white">
         <div className="flex flex-row items-center w-10/12 h-16 lg:h-24 text-9xl">
-          <Link href="#">
+          <Link href="/">
             <img
               className="flex-none w-[90px] lg:w-[140px]"
               alt=""
