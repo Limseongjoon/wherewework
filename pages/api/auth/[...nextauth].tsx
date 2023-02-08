@@ -1,5 +1,6 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import { SanityAdapter, SanityCredentials } from 'next-auth-sanity';
+import { SupabaseAdapter } from '@next-auth/supabase-adapter';
 import { sanity, supabase } from '../../../lib/client';
 import KakaoProvider from 'next-auth/providers/kakao';
 import jwt from 'jsonwebtoken';
