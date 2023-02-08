@@ -11,35 +11,35 @@ import { SessionProvider } from 'next-auth/react';
 
 function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   // GA
-  // const router = useRouter();
-  // useEffect(() => {
-  //   const handleRouteChange = (url: any) => {
-  //     gtag.pageview(url);
-  //   };
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-  //   router.events.on('hashChangeComplete', handleRouteChange);
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //     router.events.off('hashChangeComplete', handleRouteChange);
-  //   };
-  // }, [router.events]);
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url: any) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    router.events.on('hashChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+      router.events.off('hashChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   // 채널톡
-  // useEffect(() => {
-  //   const channelTalk = new ChannelService();
+  useEffect(() => {
+    const channelTalk = new ChannelService();
 
-  //   channelTalk.boot({
-  //     pluginKey: process.env.NEXT_PUBLIC_CHANNEL_IO_KEY,
-  //   });
-  //   return () => {
-  //     channelTalk.shutdown();
-  //   };
-  // }, []);
+    channelTalk.boot({
+      pluginKey: process.env.NEXT_PUBLIC_CHANNEL_IO_KEY,
+    });
+    return () => {
+      channelTalk.shutdown();
+    };
+  }, []);
 
   return (
     <>
       {/* GA */}
-      {/* <Script
+      <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
@@ -56,7 +56,7 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
             });
           `,
         }}
-      /> */}
+      />
       <RecoilRoot>
         {/* <ChakraProvider theme={{}}> */}
         {/* <div className="bg-gray-200">
