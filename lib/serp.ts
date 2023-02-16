@@ -2,36 +2,25 @@ import axios from 'axios';
 import { load } from 'cheerio';
 import puppeteer from 'puppeteer';
 
-const getSerpRankingPuppeteer = async (keyword: string, domain: string) => {
-  // const browser = await puppeteer.launch({ headless: false });
-  // const pageObj = await browser.newPage();
-  // await pageObj.setViewport({
-  //   width: 1920,
-  //   height: 1080,
-  // });
-  // await pageObj.goto(
-  //   `https://www.google.com/search?q=${encodeURIComponent(
-  //     keyword
-  //   )}&start=${start}`
-  // );
-  // await pageObj.waitForSelector('#rso');
-  // await pageObj.waitForTimeout(Math.floor(Math.random() * 1000));
-  // const content = await pageObj.content();
-  // const $ = load(content, { decodeEntities: true });
-  // await browser.close();
-};
-
-export const getSerpRanking = async (keyword: string, domain: string) => {
-  const referer = 'https://www.google.com/';
-  const type = 'desktop';
-
+export const getSerpRanking = async ({
+  keyword,
+  domain,
+  referer = 'https://www.google.com/',
+  type = 'desktop',
+  gl = 'kr',
+  hl = 'ko', // hl 은 검색결과에 영향 안미치는 듯?
+}: {
+  keyword: string;
+  domain: string;
+  referer?: string;
+  type?: 'desktop' | 'tablet' | 'mobile';
+  gl?: string;
+  hl?: string;
+}) => {
   // 지역별(gl), 언어별(hl) 필터
   const start = 0;
   const num = 100;
-  const gl = 'kr';
-  const hl = 'ko'; // hl 은 검색결과에 영향 안미치는 듯?
-
-  let url = `https://www.google.com/search?q=${keyword}&start=${start}&num=${num}&gl=${gl}&hl=${hl}`;
+  let url = `${referer}/search?q=${keyword}&start=${start}&num=${num}&gl=${gl}&hl=${hl}`;
 
   const headers = {
     'User-Agent':
@@ -98,6 +87,54 @@ export const getSerpRanking = async (keyword: string, domain: string) => {
 
   return ret;
 };
+
+const fetchData = async (url: string, headers: any): Promise<any> => {
+  try {
+    const response = await axios.get(url, { headers });
+    return response.data;
+  } catch (error: any) {
+    if (error.response && error.response.status === 429) {
+      // scrape.do
+      // scraperapi
+      // scrapingbee
+      // 여러개 순회하면서 스크레이핑 하도록. 하나 막히면 다음으로 넘어가도록.
+      // 우선은 scrape.do 로만 작업 (유료 모델 결제)
+
+      const scrape_do_url = `http://api.scrape.do?token=${
+        process.env.SCRAPEDO_TOKEN
+      }&url=${encodeURIComponent(url)}`;
+
+      const response = await axios.get(scrape_do_url, { headers });
+      return response.data;
+    } else {
+      throw error;
+    }
+  }
+};
+
+function sleep(ms: number) {
+  const wakeUpTime = Date.now() + ms;
+  while (Date.now() < wakeUpTime) {}
+}
+
+// const getSerpRankingPuppeteer = async (keyword: string, domain: string) => {
+// const browser = await puppeteer.launch({ headless: false });
+// const pageObj = await browser.newPage();
+// await pageObj.setViewport({
+//   width: 1920,
+//   height: 1080,
+// });
+// await pageObj.goto(
+//   `https://www.google.com/search?q=${encodeURIComponent(
+//     keyword
+//   )}&start=${start}`
+// );
+// await pageObj.waitForSelector('#rso');
+// await pageObj.waitForTimeout(Math.floor(Math.random() * 1000));
+// const content = await pageObj.content();
+// const $ = load(content, { decodeEntities: true });
+// await browser.close();
+// };
 
 // export const getSerpRankingOld = async (keyword: string, domain: string) => {
 //   // Set the user agent and the referer to simulate a real search
@@ -183,31 +220,3 @@ export const getSerpRanking = async (keyword: string, domain: string) => {
 //     }
 //   }
 // };
-
-const fetchData = async (url: string, headers: any): Promise<any> => {
-  try {
-    const response = await axios.get(url, { headers });
-    return response.data;
-  } catch (error: any) {
-    if (error.response && error.response.status === 429) {
-      // scrape.do
-      // scraperapi
-      // scrapingbee
-      // 여러개 순회하면서 스크레이핑 하도록. 하나 막히면 다음으로 넘어가도록.
-
-      const scrape_do_url = `http://api.scrape.do?token=${
-        process.env.SCRAPEDO_TOKEN
-      }&url=${encodeURIComponent(url)}`;
-
-      const response = await axios.get(scrape_do_url, { headers });
-      return response.data;
-    } else {
-      throw error;
-    }
-  }
-};
-
-function sleep(ms: number) {
-  const wakeUpTime = Date.now() + ms;
-  while (Date.now() < wakeUpTime) {}
-}

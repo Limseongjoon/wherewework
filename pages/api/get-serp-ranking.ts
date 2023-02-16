@@ -12,6 +12,7 @@ export default async function handler(
   if (!keyword || !domain)
     return res.status(400).json({ error: 'bad request' });
 
-  const ret = await getSerpRanking(keyword, domain);
+  // const ret = await getSerpRanking({ keyword: keyword, domain: domain });
+  const ret = {};
   return res.status(200).json(ret);
 }
