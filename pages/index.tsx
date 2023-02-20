@@ -54,7 +54,7 @@ const FrameComponent3: NextPage = () => {
             내 사이트 검색순위 확인
           </div>
           <div className="h-2"></div>
-          <div className="text-5xs lg:text-sm leading-[60%] font-medium">
+          <div className="text-5xs lg:text-sm font-medium">
             <p className="">
               ✔ 내 사이트가 검색결과 몇 번째 페이지에 뜨는지 키워드별로 확인할
               수 있어요.
@@ -191,7 +191,7 @@ const FrameComponent3: NextPage = () => {
           <img className="w-full" alt="" src="/images/feature-1.png" />
         </div>
         <div className="w-fit flex flex-row items-center gap-8 lg:gap-10">
-          <div className="text-18xl lg:text-28xl lg:font-medium font-gmarket-sans-ttf text-mediumslateblue text-right pb-6">
+          <div className="text-18xl lg:text-28xl lg:font-medium text-mediumslateblue text-right pb-6">
             1
           </div>
           <div>
@@ -199,7 +199,7 @@ const FrameComponent3: NextPage = () => {
               키워드 및 URL 입력
             </div>
             <div className="h-2 lg:h-4"></div>
-            <div className="text-2xs lg:text-8xl font-regular leading-[140%] whitespace-nowrap">
+            <div className="text-2xs lg:text-8xl font-regular leading-[140%]">
               검색순위가 궁금한 키워드들과 자사 URL<br></br>또는 타사 URL을
               입력창에 입력합니다.
             </div>
@@ -212,7 +212,7 @@ const FrameComponent3: NextPage = () => {
       <div className="h-36 lg:h-60"></div>
       <div className="flex flex-col justify-between gap-12">
         <div className="w-fit flex flex-row items-center self-center gap-8 lg:gap-10">
-          <div className="text-18xl lg:text-28xl lg:font-medium font-gmarket-sans-ttf text-mediumslateblue text-right pb-6">
+          <div className="text-18xl lg:text-28xl lg:font-medium text-mediumslateblue text-right pb-6">
             2
           </div>
           <div>
@@ -234,7 +234,7 @@ const FrameComponent3: NextPage = () => {
       <div className="h-28 lg:h-60"></div>
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-28">
         <div className="w-fit flex flex-row items-center gap-8 lg:gap-10">
-          <div className="text-24xl lg:text-28xl lg:font-medium font-gmarket-sans-ttf text-mediumslateblue text-right pb-6">
+          <div className="text-24xl lg:text-28xl lg:font-medium text-mediumslateblue text-right pb-6">
             3
           </div>
           <div>
