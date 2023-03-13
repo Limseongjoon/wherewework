@@ -1,43 +1,45 @@
 import Link from 'next/link';
-import CustomImage from './CustomImage';
 
-const Header = () => {
-  const headerItems = [
-    {
-      title: '요금안내',
-      href: '/pricing',
-    },
-    {
-      title: '문의하기',
-      href: '/contact',
-    },
-    {
-      title: '로그아웃',
-      href: '#',
-    },
-  ];
-
+const Page = () => {
   return (
-    <div className="relative z-50">
-      <div className="bg-white fixed h-12 w-full flex flex-row items-center px-10 drop-shadow-md">
-        <Link href="#">
-          <CustomImage src="/images/logo-1.png" className="w-20 h-auto pt-1" />
+    <div className="flex flex-col items-center relative z-50">
+      <div className="h-6 lg:h-6"></div>
+      <Link href="/">
+        <img
+          className="flex-none w-[300px] lg:w-[500px]"
+          alt=""
+          src="/images/logo.png"
+        />
+      </Link>
+      <div className="h-4 lg:h-4"></div>
+      <div className="flex-none flex flex-row items-center justify-between gap-4 lg:gap-12">
+        <Link
+          href="/#"
+          className="border-solid border-2 font-medium px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210]"
+        >
+          ABOUT
         </Link>
-        <div className="grow"></div>
-        <div className="flex flex-row items-center text-xs font-medium gap-10">
-          {headerItems.map((item) => {
-            return (
-              <Link href={item.href ? item.href : '#'}>
-                <div className="hover:font-semibold focus:font-semibold">
-                  {item.title}
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        <Link
+          href="/team"
+          className="border-solid border-2 font-medium px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210]"
+        >
+          OUR TEAM
+        </Link>
+        <Link
+          href="/talents"
+          className="border-solid border-2 font-medium px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210]"
+        >
+          TALENTS
+        </Link>
+        <Link
+          href="/contact"
+          className="border-solid border-2 font-medium px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210]"
+        >
+          CONTACT
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default Page;
