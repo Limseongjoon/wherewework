@@ -6,7 +6,7 @@ const Page = () => {
     <div>
       <div className="flex flex-col items-center w-screen max-h-fit bg-white text-29xl font-pretendard">
         <Header />
-        <div className="h-18 lg:h-24"></div>
+        <div className="h-24"></div>
         <img
           className="w-10/12 lg:w-[980px]"
           alt=""

@@ -12,28 +12,28 @@ const Page = () => {
         />
       </Link>
       <div className="h-4 lg:h-4"></div>
-      <div className="flex-none flex flex-row items-center justify-between gap-4 lg:gap-12">
+      <div className="flex-none flex flex-row items-center justify-between gap-4 lg:gap-8">
         <Link
           href="/#"
-          className="border-solid border-2 font-medium px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210]"
+          className="border-solid border-2 font-medium px-4 lg:px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210] text-xs lg:text-base"
         >
           ABOUT
         </Link>
         <Link
           href="/team"
-          className="border-solid border-2 font-medium px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210]"
+          className="border-solid border-2 font-medium px-4 lg:px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210] text-xs lg:text-base"
         >
           OUR TEAM
         </Link>
         <Link
           href="/talents"
-          className="border-solid border-2 font-medium px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210]"
+          className="border-solid border-2 font-medium px-4 lg:px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210] text-xs lg:text-base"
         >
           TALENTS
         </Link>
         <Link
           href="/contact"
-          className="border-solid border-2 font-medium px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210]"
+          className="border-solid border-2 font-medium px-4 lg:px-8 py-1 rounded-sm hover:bg-[#FFF210] focus:bg-[#FFF210] text-xs lg:text-base"
         >
           CONTACT
         </Link>
